@@ -44,3 +44,25 @@ const nextBtn = document.getElementById('next');
 nextBtn.addEventListener('click', nextProfile);
 
 
+function nextProfile() {
+    const profile = profiles.next().value;
+    const imageContainer = document.getElementById('imageDisplay');
+    const profileContainer = document.getElementById('profileDisplay');
+
+    if ( !profile ) { return; }
+
+    profileContainer.innerHTML = `
+        <ul class='list-group'>
+            <li class='list-group-item'>Name: ${profile.name}<li>
+            <li class='list-group-item'>Age: ${profile.age}<li>
+            <li class='list-group-item'>Gender: ${profile.gender}<li>
+            <li class='list-group-item'>Looking For: ${profile.lookingfor}<li>
+            <li class='list-group-item'>Location: ${profile.location}<li>
+        </ul>
+    `;
+
+    imageContainer.innerHTML = `
+        <img class='image-fluid' src='${profile.image}'>
+    `;
+
+}
