@@ -49,7 +49,10 @@ function nextProfile() {
     const imageContainer = document.getElementById('imageDisplay');
     const profileContainer = document.getElementById('profileDisplay');
 
-    if ( !profile ) { return; }
+    if ( !profile ) { 
+        disableNextBtn();
+        return; 
+    }
 
     profileContainer.innerHTML = `
         <ul class='list-group'>
@@ -64,5 +67,8 @@ function nextProfile() {
     imageContainer.innerHTML = `
         <img class='image-fluid' src='${profile.image}'>
     `;
+}
 
+function disableNextBtn() {
+    nextBtn.setAttribute('disabled', 'true');
 }
