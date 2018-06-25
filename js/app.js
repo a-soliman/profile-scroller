@@ -40,3 +40,7 @@ function profileIterator(profiles) {
 
 const profiles = profileIterator(data);
 
+const nextBtn = document.getElementById('next');
+nextBtn.addEventListener('click', nextProfile);
+
+
