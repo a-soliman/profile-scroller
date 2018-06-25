@@ -37,3 +37,6 @@ function profileIterator(profiles) {
         }
     };
 }
+
+const profiles = profileIterator(data);
+
