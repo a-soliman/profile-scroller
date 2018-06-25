@@ -1,3 +1,4 @@
+const nextBtn = document.getElementById('next');
 const data = [
     {
         name: 'John Doe',
@@ -25,7 +26,10 @@ const data = [
     }
 ];
 
-// Profile Iterator
+// ADD EVENT LISTENER TO NEXT BUTTON
+nextBtn.addEventListener('click', nextProfile);
+
+// PROFILE ITERATOR
 function profileIterator(profiles) {
     let nextIndex = 0;
 
@@ -38,12 +42,10 @@ function profileIterator(profiles) {
     };
 }
 
+// INSTENSE OF PROFILEITERATOER
 const profiles = profileIterator(data);
 
-const nextBtn = document.getElementById('next');
-nextBtn.addEventListener('click', nextProfile);
-
-
+// NEXT PROFILE => IMBEDS THE NEXT PROFILE INTO THE UI
 function nextProfile() {
     const profile = profiles.next().value;
     const imageContainer = document.getElementById('imageDisplay');
@@ -69,6 +71,7 @@ function nextProfile() {
     `;
 }
 
+// DISABLES THE NEXT BUTTON
 function disableNextBtn() {
     nextBtn.setAttribute('disabled', 'true');
 }
